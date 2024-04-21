@@ -1,0 +1,23 @@
+
+
+sudo apt install -y git 
+sudo apt install -y curl zip unzip tar wget
+sudo apt install -y cmake libboost-all-dev
+sudo apt install -y gcc g++
+sudo apt install -y gcc g++
+sudo apt install -y gcc g++
+
+sudo apt install -y cget
+
+# install inja
+sudo cget install -y pantor/inja
+
+
+??? sudo apt install -y pkg-config
+
+??? git clone --depth 1 https://github.com/Microsoft/vcpkg.git vcpkg
+
+??? ./vcpkg/bootstrap-vcpkg.sh
+??? ./vcpkg/vcpkg integrate install 
+
+??? "-DCMAKE_TOOLCHAIN_FILE=/home/<username>/<path/to>/vcpkg/scripts/buildsystems/vcpkg.cmake"

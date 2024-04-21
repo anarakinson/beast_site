@@ -1,0 +1,8 @@
+version: "3.5"
+
+services:
+    website:
+        build: .
+        restart: always
+        ports:
+            - 3333:3333
