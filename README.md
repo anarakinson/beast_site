@@ -20,8 +20,3 @@ else:
 
 ```
 2. Install all packages from `requirements.txt`
-
-
-### Notice:
-If you are using `SSLServer` on localhost - don't forget replace `http://localhost` with `https://localhost`
-
