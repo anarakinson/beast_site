@@ -185,12 +185,12 @@ http::message_generator handle_request(
     if (req.target().back() == '/') {
         path.append("index");
     }
-    path.append(".html");
+    // path.append(".html");
     
     // Attempt to open the file
     beast::error_code ec;
     http::file_body::value_type body;
-    body.open(path.c_str(), beast::file_mode::scan, ec);
+    body.open((path + ".html").c_str(), beast::file_mode::scan, ec);
 
     // Handle the case where the file doesn't exist
     if(ec == beast::errc::no_such_file_or_directory)

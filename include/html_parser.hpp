@@ -14,7 +14,7 @@ public:
     std::string get_page(const std::string &path) {
 
         std::cout << m_lang << " " << path << " " << std::endl;
-        inja::Template tmpt = env.parse_template(m_lang + path);
+        inja::Template tmpt = env.parse_template(m_lang + path + ".html");
 
         // Build data
         page_data["nothing"] = "nothing";
