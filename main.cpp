@@ -3,19 +3,9 @@
 #include <json_parser.hpp>
 #include <html_parser.hpp>
 #include <boost_server.hpp>
-// #include <server.hpp>
-
-#include <boost/beast/core.hpp>
-#include <boost/beast/http.hpp>
-#include <boost/beast/version.hpp>
-#include <boost/asio/ip/tcp.hpp>
-#include <boost/config.hpp>
-
 
 #include <iostream>
-#include <memory>
 #include <string>
-#include <thread>
 
 #include <cstdlib>
 
