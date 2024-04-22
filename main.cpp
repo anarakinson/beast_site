@@ -26,8 +26,6 @@ namespace asio = boost::asio;            // from <boost/asio.hpp>
 using tcp = boost::asio::ip::tcp;       // from <boost/asio/ip/tcp.hpp>
 
 
-
-
 int main(int argc, char* argv[]) {
 
     std::cout << "Hello" << std::endl;
@@ -38,26 +36,9 @@ int main(int argc, char* argv[]) {
 
         std::cout << config.server_ip() << " " << config.server_port() << " " << config.ssl() << std::endl;
 
-
-        HTMLParser htmlp{"./app/html/"};
-
-        // auto page = htmlp.get_page("about");
-
-        // std::cout << page << std::endl;
-
-
-        // std::string path = "D:/Coding/Atom/cpp/website_cv_beast/app/html/test.html";
-       
-
-        // /*-------------------------------------------------------------------*/
-
-
         int result = run_server(argc, argv);
 
-        // std::cout << result << std::endl;
-
         std::cout << "Stop server" << std::endl;
-
 
     } catch (std::exception &ex) {
         std::cout << ex.what() << std::endl;

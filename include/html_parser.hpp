@@ -7,19 +7,15 @@
 class HTMLParser {
 public:
     HTMLParser() = default;
-    explicit HTMLParser(const std::string &path) : env{path} {
-        set_css("./app/css/main.css");
-    }
+    explicit HTMLParser(const std::string &path) : env{path} {}
 
     std::string get_page(const std::string &path) {
 
-        std::cout << m_lang << " " << path << " " << std::endl;
-        inja::Template tmpt = env.parse_template(m_lang + path + ".html");
+        inja::Template tmpt = env.parse_template(path);
 
         // Build data
         page_data["nothing"] = "nothing";
-        page_data["lang"] = m_lang;
-        page_data["css_path"] = "/app/css/main.css";
+        page_data["css_path"] = "./css/main.css";
         page_data["css_body"] = m_css_body;
 
         // render content   
@@ -30,7 +26,7 @@ public:
         
         std::ifstream file(path);
         if (!file) {
-            std::cerr << "Cannot open file\n";
+            std::cerr << "Cannot open file: " << path << "\n";
             return;
         }
         std::string str; 
@@ -40,22 +36,11 @@ public:
 
     } 
 
-    void set_language(const std::string &lang) {
-        if (lang == "ru") {
-            m_lang = "/ru/";
-        } else if (lang == "en") {
-            m_lang = "";
-        } else {
-            return;
-        }
-    }
-
 private:
 
     inja::Environment env;
     inja::json page_data;
 
-    std::string m_lang = "";
     std::string m_css_body = "";
 
 };

@@ -8,11 +8,12 @@ if(MSVC)
     set(OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/Debug)
 else()
     set(OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/)
+    # set(CMAKE_CXX_FLAGS -pthread) # ???
 endif()
 
 
 find_package(Boost COMPONENTS system program_options REQUIRED)
-find_package(Threads)
+find_package(Threads REQUIRED)
 find_package(inja CONFIG REQUIRED)
 
 
@@ -45,6 +46,7 @@ include_directories(
 target_link_libraries(
     website PRIVATE 
     pantor::inja
+    Threads::Threads
     ${Boost_LIBRARIES}
 )
 
@@ -52,14 +54,14 @@ target_link_libraries(
 # set compile options
 if (MSVC)
     target_compile_options(website PRIVATE
-        /W4
+        # /W4
     )
 else ()
     target_compile_options(website PRIVATE
         # -Wall 
-        -Wextra 
-        -pedantic 
-        -Werror
+        # -Wextra 
+        # -pedantic 
+        # -Werror
     )
 endif()
 

@@ -19,4 +19,5 @@ else:
 ./vcpkg/vcpkg list
 
 ```
-2. Install all packages from `requirements.txt`
+
+2. Run 'docker-compose up' and open port '3333'

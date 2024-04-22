@@ -32,7 +32,7 @@ public:
         m_ssl_key = root.get<std::string>("ssl_key", "");
         m_ssl_cert = root.get<std::string>("ssl_cert", "");
 
-        return;
+        // return;
 
     }
 
@@ -52,6 +52,8 @@ public:
         m_ssl = other.m_ssl;
         m_ssl_key = other.m_ssl_cert;
         m_ssl_cert = other.m_ssl_key;
+
+        return *this;
     }
     
 
@@ -68,6 +70,8 @@ public:
         std::swap(m_ssl, other.m_ssl);
         std::swap(m_ssl_key, other.m_ssl_cert);
         std::swap(m_ssl_cert, other.m_ssl_key);
+
+        return *this;
     }
     
 
